@@ -18,7 +18,7 @@
 .louloupiottes__header .louloupiottes__searchform input:focus {
   outline: none;
 }
-.louloupiottes__header .louloupiottes__searchform input:hover {
+.louloupiottes__header .louloupiottes__searchform input:hover, .louloupiottes__header .louloupiottes__searchform input:focus {
   background-color: #ede7e9;
   border: 1px solid #b69da5;
 }
@@ -38,9 +38,15 @@
 .louloupiottes__header .louloupiottes__searchform button svg {
   transform: scale(0.5);
 }
+.louloupiottes__header .louloupiottes__searchform button:hover {
+  cursor: pointer;
+}
 
 .louloupiottes__header {
   background-color: #ede7e9;
+  position: sticky;
+  transition: transform 0.5s ease-in-out;
+  top: 0;
 }
 .louloupiottes__header .header__top {
   display: flex;
@@ -108,6 +114,9 @@
 }
 .louloupiottes__header .top__right ul li {
   position: relative;
+  transition: all 0.25s ease-in-out;
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 .louloupiottes__header .top__right ul li:not(:first-child):not(:last-child) {
   margin-inline: 20px;
@@ -118,19 +127,78 @@
 .louloupiottes__header .top__right ul li:last-child {
   margin-left: 20px;
 }
-.louloupiottes__header .top__right ul li::after {
+.louloupiottes__header .top__right ul li:hover {
+  background: #490b1f;
+}
+.louloupiottes__header .top__right ul li:hover a {
+  color: #ede7e9;
+}
+.louloupiottes__header .top__right ul li a {
+  width: 100%;
+  height: 100%;
+}
+.louloupiottes__header .top__right ul li.active {
+  background: #490b1f;
+}
+.louloupiottes__header .top__right ul li.active a {
+  color: #ede7e9;
+}
+
+.louloupiottes__header .header__bottom li ul li {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid #490b1f;
+  font-size: 0.6rem;
+  border-radius: 100px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+.louloupiottes__header .header__bottom li ul li a {
+  font-size: 0.8rem;
+}
+.louloupiottes__header .header__bottom li ul li::before {
   position: absolute;
   content: "";
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  transition: all 0.25s ease-in-out;
+  width: 6px;
+  height: 6px;
+  border-radius: 100px;
   background-color: #490b1f;
-  transform-origin: left;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: all 0.25s ease;
 }
-.louloupiottes__header .top__right ul li:hover::after {
-  width: 100%;
+.louloupiottes__header .header__bottom li ul li:hover {
+  border: 1px solid #b69da5;
+  background-color: #b69da5;
+}
+
+.louloupiottes__header.hidden {
+  transform: translateY(-60px);
+}
+
+.sidebar-social {
+  background-color: #b69da5;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  max-height: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transition: left 0.5s ease-in-out;
+  padding-block: 10px;
+  padding-inline: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.sidebar-social li a {
+  padding: 5px;
+  color: #ede7e9;
+}
+
+.sidebar-social.hidden {
+  left: -100px;
 }
 
 * {

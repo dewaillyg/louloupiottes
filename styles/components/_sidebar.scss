@@ -1,0 +1,26 @@
+@use '../settings/colors';
+
+.sidebar-social {
+    background-color: colors.$color-brand-600;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    max-height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transition: left .5s ease-in-out;
+    padding-block: 10px;
+    padding-inline: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    li a{
+        padding: 5px;
+        color: colors.$color-brand-900;
+    }
+}
+
+.sidebar-social.hidden {
+    left: -100px;
+}

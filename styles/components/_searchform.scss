@@ -21,7 +21,7 @@
         outline: none;
     }
 
-    &:hover {
+    &:hover, &:focus {
         background-color: colors.$color-brand-900;
         border: 1px solid colors.$color-brand-600;
     }
@@ -41,5 +41,9 @@
 
     svg {
         transform: scale(.5);
+    }
+
+    &:hover {
+        cursor: pointer;
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+// feuilles de styles
 function charger_master_css(): void
 {
     wp_enqueue_style(
@@ -11,6 +12,9 @@ function charger_master_css(): void
     );
 }
 
+add_action('wp_enqueue_scripts', 'charger_master_css');
+
+// barre de recehrcher
 function custom_search_form($form)
 {
     $form = '
@@ -43,5 +47,22 @@ register_sidebar(array(
     'name' => 'Categories'
 ));
 
-add_action('wp_enqueue_scripts', 'charger_master_css');
 add_filter('get_search_form', 'custom_search_form');
+
+// scripts js
+function charger_mes_scripts() {
+    wp_enqueue_script(
+        'mon-script-js', 
+        get_template_directory_uri() . '/scripts/headerNavItems.js',
+        '1.0.0', 
+        true 
+    );
+    wp_enqueue_script(
+        'mon-script-js-2', 
+        get_template_directory_uri() . '/scripts/headerSticky.js',
+        '1.0.0', 
+        true 
+    );
+}
+
+add_action('wp_enqueue_scripts', 'charger_mes_scripts');
