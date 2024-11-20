@@ -1,0 +1,115 @@
+@use '../settings/colors';
+
+.louloupiottes__header {
+    background-color: colors.$color-brand-900;
+
+    .header__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 20px;
+        height: 60px;
+
+        .top__left {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .top__right {
+            width: 50%;
+        }
+    }
+
+    .header__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 20px;
+        height: 50px;
+
+        > li {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            ul {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+                justify-content: space-evenly;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.louloupiottes__header .top__left {
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 20px;
+
+        img {
+            height: 50px;
+            border-radius: 10px;
+            border: 2px solid colors.$color-brand;
+        }
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form {
+        margin-left: 40px;
+    }
+}
+
+
+.louloupiottes__header .top__right ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    li {
+        position: relative;
+
+        &:not(:first-child):not(:last-child) {
+            margin-inline: 20px;
+        }
+
+        &:first-child {
+            margin-right: 20px;
+        }
+
+        &:last-child {
+            margin-left: 20px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            transition: all .25s ease-in-out;
+            background-color: colors.$color-brand;
+            transform-origin: left;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+}

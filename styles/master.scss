@@ -1,0 +1,18 @@
+// Settings
+@use './settings/colors';
+@use './settings/fonts';
+// Components
+@use './components/searchform';
+@use './components/header';
+
+// padding-inline: 20px
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: fonts.$font-stack;
+  color: colors.$color-brand;
+  text-decoration: none;
+}

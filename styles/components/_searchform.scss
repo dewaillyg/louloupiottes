@@ -1,0 +1,45 @@
+@use '../settings/colors';
+
+.louloupiottes__header .louloupiottes__searchform {
+    display: flex;
+}
+
+.louloupiottes__header .louloupiottes__searchform input{
+    padding-block: 10px;
+    padding-inline: 30px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid colors.$color-brand-600;
+    background: colors.$color-brand-600;
+    transition: all .25s ease-in-out;
+    
+    &::placeholder {
+        color: colors.$color-brand;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: colors.$color-brand-900;
+        border: 1px solid colors.$color-brand-600;
+    }
+}
+
+.louloupiottes__header .louloupiottes__searchform button {
+    width: 50px;
+    max-height: 39.5px;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid colors.$color-brand-600;
+    background-color: colors.$color-brand-600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        transform: scale(.5);
+    }
+}
