@@ -5,7 +5,7 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', function() {
     let currentScroll = window.scrollY;
-    if (currentScroll > lastScroll) {
+    if (currentScroll > lastScroll && currentScroll > 60) {
         header[0].classList.add('hidden');
         sidebar[0].classList.add('hidden');
     } else {
@@ -14,5 +14,4 @@ window.addEventListener('scroll', function() {
     }
 
     lastScroll = currentScroll;
-    
 });

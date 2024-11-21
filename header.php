@@ -35,5 +35,32 @@
             <?php dynamic_sidebar('categories-sidebar'); ?>
         </nav>
 
+        <div class="header__hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
+    <nav class="header__responsive">
+        <div>
+            <div>
+                <?php get_search_form() ?>
+            </div>
+            <div class="pages">
+                <h2>Pages</h2>
+                <div class="top__right">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'main',
+                        'container' => 'ul',
+                    ));
+                    ?>
+                </div>
+            </div>
+            <nav class="header__bottom">
+                <h2>Catégories</h2>
+                <?php dynamic_sidebar('categories-sidebar'); ?>
+            </nav>
+        </div>
+    </nav>
     <?php dynamic_sidebar('blog-sidebar'); ?>

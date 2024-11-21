@@ -63,6 +63,12 @@ function charger_mes_scripts() {
         '1.0.0', 
         true 
     );
+    wp_enqueue_script(
+        'mon-script-js-3', 
+        get_template_directory_uri() . '/scripts/headerResponsive.js',
+        '1.0.0', 
+        true 
+    );
 }
 
 add_action('wp_enqueue_scripts', 'charger_mes_scripts');

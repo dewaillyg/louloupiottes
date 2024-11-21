@@ -1,10 +1,12 @@
 @use '../settings/colors';
 
-.louloupiottes__header .louloupiottes__searchform {
+.louloupiottes__header .louloupiottes__searchform,
+.header__responsive .louloupiottes__searchform {
     display: flex;
 }
 
-.louloupiottes__header .louloupiottes__searchform input{
+.louloupiottes__header .louloupiottes__searchform input,
+.header__responsive .louloupiottes__searchform input {
     padding-block: 10px;
     padding-inline: 30px;
     border-top-left-radius: 5px;
@@ -27,7 +29,8 @@
     }
 }
 
-.louloupiottes__header .louloupiottes__searchform button {
+.louloupiottes__header .louloupiottes__searchform button,
+.header__responsive .louloupiottes__searchform button {
     width: 50px;
     max-height: 39.5px;
     border-radius: 0;
@@ -46,4 +49,16 @@
     &:hover {
         cursor: pointer;
     }
+}
+
+@media screen and (max-width: 460px) {
+    .header__responsive > div {
+        div:first-child {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+    } 
 }

@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() { 
     const headerNavitems = document.querySelectorAll('.louloupiottes__header #menu-menu-principal li');
+    const headerNavitemsResponsive = document.querySelectorAll('.header__responsive .top__right li');
+    console.log(headerNavitemsResponsive);
+    
 
     const url = window.location.href;
     const urlParts = url.split('/');
@@ -12,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let j = 0; j < headerNavitems.length; j++) {
                 if (!pagesCheck && pages[i] == headerNavitems[j].textContent.toLowerCase()) {
                     headerNavitems[j].classList.add('active');
+                    headerNavitemsResponsive[j].classList.add('active');
                     pagesCheck = !pagesCheck;
                 }
             }
@@ -22,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let j = 0; j < headerNavitems.length; j++) {
             if (!pagesCheck && 'accueil' == headerNavitems[j].textContent.toLowerCase()) {
                 headerNavitems[j].classList.add('active');
+                headerNavitemsResponsive[j].classList.add('active');
                 pagesCheck = !pagesCheck;
             }
         }
