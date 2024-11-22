@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() { 
     const headerNavitems = document.querySelectorAll('.louloupiottes__header #menu-menu-principal li');
     const headerNavitemsResponsive = document.querySelectorAll('.header__responsive .top__right li');
-    console.log(headerNavitemsResponsive);
     
 
     const url = window.location.href;

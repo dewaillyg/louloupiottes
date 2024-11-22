@@ -48,6 +48,8 @@ register_sidebar(array(
 ));
 
 add_filter('get_search_form', 'custom_search_form');
+add_filter('show_admin_bar', '__return_false');
+
 
 // scripts js
 function charger_mes_scripts() {
