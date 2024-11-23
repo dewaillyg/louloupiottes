@@ -22,6 +22,9 @@
 
         .top__right {
             width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
         }
     }
 
@@ -74,6 +77,50 @@
 
     form {
         margin-left: 40px;
+    }
+}
+
+.louloupiottes__header .top__right > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    padding-inline: 10px;
+    border-left: 2px solid colors.$color-brand;
+    gap: 10px;
+
+    svg {
+        height: 20px;
+        width: 20px;
+        transition: transform .1s ease-in-out;
+    }
+
+    p {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            transition: width .25s ease-in-out;
+            background-color: colors.$color-brand;
+        }
+    }
+
+    &:hover {
+        p {
+
+            &::after {
+                width: 100%;
+            }
+        }
+
+        svg {
+            transform: scale(1.15);
+        }
     }
 }
 
@@ -233,7 +280,7 @@ nav.header__responsive {
         display: block;
         position: fixed;
         width: 100vw;
-        height: calc(100vh - 60px);
+        min-height: calc(100vh - 60px);
         top: 60px;
         left: 0;
         padding: 20px 10px 74px 10px;
