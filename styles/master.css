@@ -278,9 +278,64 @@ nav.header__responsive {
     align-items: center;
     justify-content: space-between;
   }
+  nav.header__responsive .header__login {
+    width: 100%;
+  }
   nav.header__responsive .header__login > div {
     display: flex;
+    width: 100%;
     flex-direction: column;
+  }
+  nav.header__responsive .header__login > div h2 {
+    margin-bottom: 20px;
+    width: 100%;
+    justify-self: flex-start;
+  }
+  nav.header__responsive .header__login > div form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav.header__responsive .header__login > div form div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav.header__responsive .header__login > div input {
+    padding: 5px 10px;
+    border: none;
+    background-color: #b69da5;
+    color: #490b1f;
+    border-radius: 5px;
+    border: 1px solid #ede7e9;
+    transition: all 0.25s ease-in-out;
+  }
+  nav.header__responsive .header__login > div input::placeholder {
+    color: #490b1f;
+  }
+  nav.header__responsive .header__login > div input:hover, nav.header__responsive .header__login > div input:focus {
+    background-color: #ede7e9;
+    border: 1px solid #490b1f;
+  }
+  nav.header__responsive .header__login > div input:focus, nav.header__responsive .header__login > div input:active {
+    outline: none;
+  }
+  nav.header__responsive .header__login > div button {
+    background: #490b1f;
+    color: #ede7e9;
+    border-radius: 3px;
+    padding: 3px 7px;
+  }
+  nav.header__responsive .header__login > div button:hover {
+    cursor: pointer;
+  }
+  nav.header__responsive .header__login > div a {
+    font-size: 0.75rem;
+    align-self: flex-end;
+    text-decoration: underline;
   }
   nav.header__responsive .pages {
     width: 100%;
@@ -302,6 +357,7 @@ nav.header__responsive {
   }
   nav.header__responsive .header__bottom {
     width: 100%;
+    padding-bottom: 20px;
   }
   nav.header__responsive .header__bottom > li {
     margin-top: 20px;

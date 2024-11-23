@@ -66,32 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['custom_login'])) {
             <div>
                 <?php get_search_form() ?>
             </div>
-            <div class="header__login">
-                <!-- Si l'utilisteur est connecté -->
-                <?php if (is_user_logged_in()) : $currentUser = wp_get_current_user(); ?>
-                    <p><?= get_avatar($currentUser->ID, 48) ?></p>
-                    <?= esc_html($currentUser->display_name); ?>
-                    <a href="<?= esc_url(wp_logout_url(home_url())); ?>">Déconnexion</a>
-                <?php else : ?>
-                    <div>
-                        <h2>Se connecter</h2>
-                        <form method="POST">
-                            <p>
-                                <label for="username">Nom d'utilisateur :</label>
-                                <input type="text" name="username" id="username" required>
-                            </p>
-                            <p>
-                                <label for="password">Mot de passe :</label>
-                                <input type="password" name="password" id="password" required>
-                            </p>
-                            <p>
-                                <button type="submit" name="custom_login">Connexion</button>
-                            </p>
-                        </form>
-                    </div>
-                    <p>S'inscrire</p>
-                <?php endif; ?>
-            </div>
+            
             <div class="pages">
                 <h2>Pages</h2>
                 <div class="top__right">
@@ -107,6 +82,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['custom_login'])) {
                 <h2>Catégories</h2>
                 <?php dynamic_sidebar('categories-sidebar'); ?>
             </nav>
+            <div class="header__login">
+                <!-- Si l'utilisteur est connecté -->
+                <?php if (is_user_logged_in()) : $currentUser = wp_get_current_user(); ?>
+                    <p><?= get_avatar($currentUser->ID, 48) ?></p>
+                    <?= esc_html($currentUser->display_name); ?>
+                    <a href="<?= esc_url(wp_logout_url(home_url())); ?>">Déconnexion</a>
+                <?php else : ?>
+                    <div>
+                        <h2>Se connecter</h2>
+                        <form method="POST">
+                            <input placeholder="Login" type="text" name="username" id="username" required>
+                            <input placeholder="Mot de passe" type="password" name="password" id="password" required>
+                            <div>
+                                <button type="submit" name="custom_login">Connexion</button>
+                                <a href='/'>S'inscrire</a>
+                            </div>
+
+                        </form>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
     </nav>
     <?php dynamic_sidebar('blog-sidebar'); ?>
