@@ -1,0 +1,92 @@
+@use '../settings/colors';
+
+.louloupiottes__login_body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: colors.$color-brand-600;
+
+    .header__errors {
+        background-color: white;
+        text-align: center;
+    }
+}
+
+.louloupiottes__login  {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    flex-direction: column;
+    background-color: colors.$color-brand-900;
+    border-radius: 10px;
+    padding: 50px 100px;
+
+    
+
+    h1 {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+
+        div {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    
+    input {
+        padding: 5px 10px;
+        border: none; 
+        background-color: colors.$color-brand-600;
+        color: colors.$color-brand;
+        border-radius: 5px;
+        border: 1px solid colors.$color-brand-900;
+        transition: all .25s ease-in-out;
+
+        &::placeholder {
+            color: colors.$color-brand;
+        }
+
+        &:hover, &:focus {
+            background-color: colors.$color-brand-900;
+            border: 1px solid colors.$color-brand;
+        }
+
+        &:focus, &:active {
+            outline: none;
+        }
+    }
+
+    button {
+        background: colors.$color-brand;
+        color: colors.$color-brand-900;
+        border-radius: 3px;
+        padding: 3px 7px;
+        outline: none;
+        border: none;
+        padding: 5px 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    a {
+        font-size: 0.75rem;
+        align-self: flex-end;
+        text-decoration: underline;
+    }
+}

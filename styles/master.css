@@ -175,17 +175,13 @@
   padding: 5px 15px;
   border-radius: 20px;
 }
-.louloupiottes__header .top__right ul li:not(:first-child):not(:last-child),
-.header__responsive .top__right ul li:not(:first-child):not(:last-child) {
+.louloupiottes__header .top__right ul li:not(:first-child),
+.header__responsive .top__right ul li:not(:first-child) {
   margin-inline: 20px;
 }
 .louloupiottes__header .top__right ul li:first-child,
 .header__responsive .top__right ul li:first-child {
   margin-right: 20px;
-}
-.louloupiottes__header .top__right ul li:last-child,
-.header__responsive .top__right ul li:last-child {
-  margin-left: 20px;
 }
 .louloupiottes__header .top__right ul li:hover,
 .header__responsive .top__right ul li:hover {
@@ -238,6 +234,50 @@
   background-color: #b69da5;
 }
 
+.louloupiottes__header .desktop_connected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 20px;
+  border-left: 1px solid #490b1f;
+}
+.louloupiottes__header .desktop_connected div {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.louloupiottes__header .desktop_connected div a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.louloupiottes__header .desktop_connected div img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transition: transform 0.25s linear;
+}
+.louloupiottes__header .desktop_connected div:first-child a:hover img {
+  transform: scale(1.1);
+}
+.louloupiottes__header .desktop_connected div:last-child a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.louloupiottes__header .desktop_connected div:last-child a:hover svg {
+  height: 100%;
+  width: 100%;
+}
+.louloupiottes__header .desktop_connected div:last-child a svg {
+  height: 90%;
+  width: 90%;
+  transition: all 0.25s linear;
+}
+
 .louloupiottes__header.hidden {
   transform: translateY(-60px);
 }
@@ -253,11 +293,14 @@ nav.header__responsive {
     justify-content: space-between;
     padding-inline: 20px;
   }
-  .louloupiottes__header .header__bottom, .louloupiottes__header .top__right {
-    display: none;
+  .louloupiottes__header .header__bottom {
+    display: none !important;
+  }
+  .louloupiottes__header .top__right {
+    display: none !important;
   }
   .louloupiottes__header .top__left > div {
-    display: none;
+    display: none !important;
   }
   .louloupiottes__header .header__top {
     padding: 0;
@@ -437,6 +480,84 @@ nav.header__responsive {
 
 .sidebar-social.hidden {
   left: -100px;
+}
+
+.louloupiottes__login_body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #b69da5;
+}
+.louloupiottes__login_body .header__errors {
+  background-color: white;
+  text-align: center;
+}
+
+.louloupiottes__login {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  flex-direction: column;
+  background-color: #ede7e9;
+  border-radius: 10px;
+  padding: 50px 100px;
+}
+.louloupiottes__login h1 {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+.louloupiottes__login form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.louloupiottes__login form div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.louloupiottes__login input {
+  padding: 5px 10px;
+  border: none;
+  background-color: #b69da5;
+  color: #490b1f;
+  border-radius: 5px;
+  border: 1px solid #ede7e9;
+  transition: all 0.25s ease-in-out;
+}
+.louloupiottes__login input::placeholder {
+  color: #490b1f;
+}
+.louloupiottes__login input:hover, .louloupiottes__login input:focus {
+  background-color: #ede7e9;
+  border: 1px solid #490b1f;
+}
+.louloupiottes__login input:focus, .louloupiottes__login input:active {
+  outline: none;
+}
+.louloupiottes__login button {
+  background: #490b1f;
+  color: #ede7e9;
+  border-radius: 3px;
+  padding: 3px 7px;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+}
+.louloupiottes__login button:hover {
+  cursor: pointer;
+}
+.louloupiottes__login a {
+  font-size: 0.75rem;
+  align-self: flex-end;
+  text-decoration: underline;
 }
 
 * {
