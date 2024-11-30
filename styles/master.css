@@ -417,6 +417,25 @@ nav.header__responsive {
     align-self: flex-end;
     text-decoration: underline;
   }
+  nav.header__responsive .header__login_responsive {
+    margin: 0;
+    padding: 0 !important;
+  }
+  nav.header__responsive .header__login_responsive img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  nav.header__responsive .header__login_responsive > div {
+    display: flex;
+    width: 75%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  nav.header__responsive .header__login_responsive > div a {
+    font-size: 1rem !important;
+  }
   nav.header__responsive .pages {
     width: 100%;
     padding-bottom: 20px;
@@ -558,6 +577,49 @@ nav.header__responsive {
   font-size: 0.75rem;
   align-self: flex-end;
   text-decoration: underline;
+}
+.louloupiottes__login .errors {
+  background-color: white;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border: 2px solid red;
+  font-size: 0.75rem;
+  color: red;
+}
+.louloupiottes__login .success {
+  background-color: white;
+  margin-top: 20px;
+  padding: 5px 10px;
+  border: 2px solid green;
+  font-size: 0.75rem;
+  color: green;
+}
+
+.louloupiottes__verification_success {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ede7e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.louloupiottes__verification_success h2 {
+  text-align: center;
+}
+.louloupiottes__verification_success a {
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.25s ease-in-out;
+  border: 1px solid #490b1f;
+  background-color: #ede7e9;
+  color: #490b1f;
+}
+.louloupiottes__verification_success a:hover {
+  background-color: #490b1f;
+  border: 1px solid transparent;
+  color: #ede7e9;
 }
 
 * {

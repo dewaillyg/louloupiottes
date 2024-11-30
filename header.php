@@ -118,9 +118,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['custom_login'])) {
             <div class="header__login">
                 <!-- Si l'utilisteur est connecté -->
                 <?php if (is_user_logged_in()) : $currentUser = wp_get_current_user(); ?>
-                    <p><?= get_avatar($currentUser->ID, 48) ?></p>
-                    <?= esc_html($currentUser->display_name); ?>
-                    <a href="<?= esc_url(wp_logout_url(home_url())); ?>">Déconnexion</a>
+                    <div class="header__login_responsive">
+                        <h2>Profil</h2>
+                        <p><?= get_avatar($currentUser->ID, 48) ?></p>
+                        <?= esc_html($currentUser->display_name); ?>
+                        <div>
+                            <a href="">Editer</a>
+                            <a href="<?= esc_url(wp_logout_url(home_url())); ?>">Déconnexion</a>
+                        </div>
+                    </div>
                 <?php else : ?>
                     <div>
                         <h2>Se connecter</h2>
@@ -129,7 +135,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['custom_login'])) {
                             <input placeholder="Mot de passe" type="password" name="password" id="password" required>
                             <div>
                                 <button type="submit" name="custom_login">Connexion</button>
-                                <a href='/'>S'inscrire</a>
+                                <a href="<?php $loginPage = get_page_by_path('inscription');
+                                    if ($loginPage) {
+                                        $loginPageURL = get_permalink($loginPage->ID);
+                                         echo esc_url($loginPageURL);
+                                    }
+                                ?>">S'inscrire</a>
                             </div>
                         </form>
                     </div>

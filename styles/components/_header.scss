@@ -425,6 +425,30 @@ nav.header__responsive {
             }
         }
 
+        .header__login_responsive {
+            margin: 0;
+            padding: 0!important;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+            }
+
+            & > div {
+                display: flex;
+                width: 75%;
+                align-items: center;
+                justify-content: space-around;
+                margin-top: 20px;
+
+                & a {
+                    font-size: 1rem!important;
+                }
+            }
+
+        }
+
         .pages {
             width: 100%;
             padding-bottom: 20px;

@@ -14,7 +14,7 @@ function charger_master_css(): void
 
 add_action('wp_enqueue_scripts', 'charger_master_css');
 
-// barre de recehrcher
+// barre de recherche
 function custom_search_form($form)
 {
     $form = '
@@ -29,6 +29,7 @@ function custom_search_form($form)
     return $form;
 }
 
+// Supports / Menus / Sidebar
 add_theme_support('post-thumbnails');
 add_theme_support('title-tag');
 
@@ -74,3 +75,38 @@ function charger_mes_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'charger_mes_scripts');
+
+// Init / Mail vérification 
+
+add_action('init', 'handle_email_verification');
+function handle_email_verification() {
+    if (isset($_GET['action']) && $_GET['action'] === 'verify_email') {
+        $user_id = intval($_GET['user_id']);
+        $code = sanitize_text_field($_GET['code']);
+
+        // Vérifier si le code est correct
+        $saved_code = get_user_meta($user_id, 'email_verification_code', true);
+        if ($saved_code === $code) {
+            // Validation réussie
+            update_user_meta($user_id, 'email_verified', true);
+            delete_user_meta($user_id, 'email_verification_code');
+            wp_redirect(home_url('/verification-reussie')); // Rediriger vers une page de succès
+            exit;
+        } else {
+            wp_redirect(home_url('/verification-echouee')); // Rediriger vers une page d'échec
+            exit;
+        }
+    }
+}
+
+// Empêcher les utilisateurs non vérifiée de se connecter
+add_filter('wp_authenticate_user', 'block_unverified_users', 10, 2);
+function block_unverified_users($user) {
+    if (!get_user_meta($user->ID, 'email_verified', true)) {
+        return new WP_Error(
+            'email_not_verified',
+            'Vous devez vérifier votre e-mail avant de pouvoir vous connecter.'
+        );
+    }
+    return $user;
+}

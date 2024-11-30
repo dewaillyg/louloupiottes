@@ -89,4 +89,22 @@
         align-self: flex-end;
         text-decoration: underline;
     }
+
+    .errors {
+        background-color: white;
+        margin-top: 20px;
+        padding: 5px 10px;
+        border: 2px solid red;
+        font-size: 0.75rem;
+        color: red;
+    }
+
+    .success {
+        background-color: white;
+        margin-top: 20px;
+        padding: 5px 10px;
+        border: 2px solid green;
+        font-size: 0.75rem;
+        color: green;
+    }
 }

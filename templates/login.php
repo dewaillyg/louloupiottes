@@ -40,7 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['custom_login'])) {
       <input placeholder="Mot de passe" type="password" name="password" id="password" required>
       <div>
         <button type="submit" name="custom_login">Connexion</button>
-        <a href='/'>S'inscrire</a>
+        <a href="<?php $loginPage = get_page_by_path('inscription');
+        if ($loginPage) {
+            $loginPageURL = get_permalink($loginPage->ID);
+            echo esc_url($loginPageURL);
+        }
+        ?>">S'inscrire</a>
       </div>
     </form>
   </div>
